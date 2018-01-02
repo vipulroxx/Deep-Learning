@@ -46,13 +46,13 @@ dependencies:
 - ptyprocess=0.5.1=py36_0
 - pygments=2.2.0=py36_0
 - pyparsing=2.1.4=py36_0
-- pyqt=5.6.0=py36_2
+- pyqt=4.11.4=py35_7
 - python=3.6.1=0
 - python-dateutil=2.6.0=py36_0
 - pytz=2017.2=py36_0
 - pywavelets=0.5.2=np112py36_0
 - pyzmq=16.0.2=py36_0
-- qt=5.6.2=0
+- qt=4.8.7=0
 - qtconsole=4.3.0=py36_0
 - readline=6.2=2
 - scikit-image=0.13.0=np112py36_0
