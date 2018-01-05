@@ -10,7 +10,7 @@ With padding of size 1 (P)
 '''
  
 input = tf.placeholer(tf.float32, (None, 32,32,3))
-filter_weights = tf.Variable(tf.truncated_normal((8,8,3,20))) # (height, width, input_depth, output_depth = number of filters)
+filter_weights = tf.Variable(tf.truncated_normal((8,8,3,20))) # (height, width, input_depth = number of color channels, output_depth = number of filters)
 filter_bias = tf.Variable(tf.zeros(20))
 strides = [1,2,2,1] # (batch, height, width, depth)
 padding = 'SAME' # can be 'VALID' as well
