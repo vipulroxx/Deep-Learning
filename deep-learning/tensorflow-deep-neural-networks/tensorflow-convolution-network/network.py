@@ -50,13 +50,16 @@ def conv_net(x, weights, biases, dropout):
     conv2 = conv2d(conv1, weights['wc2'], biases['bc2'])
     conv2 = maxpool2d(conv2, k=2)
 
-    # Fully connected layer - 7*7*64 to 1024
+    # Fully connected layer - 7*7*64 to 1024 
+    # tf.contrib.layers.fully_connected(x_tensor, num_outputs)
+    # Flattening : tf.contrib.layers.flatten(x_tensor)
     fc1 = tf.reshape(conv2, [-1, weights['wd1'].get_shape().as_list()[0]])
     fc1 = tf.add(tf.matmul(fc1, weights['wd1']), biases['bd1'])
     fc1 = tf.nn.relu(fc1)
     fc1 = tf.nn.dropout(fc1, dropout)
 
     # Output Layer - class prediction - 1024 to 10
+    # tf.layers.dense(inputs=x_tensor, units=num_outputs, activation=None)
     out = tf.add(tf.matmul(fc1, weights['out']), biases['out'])
     return out
 
